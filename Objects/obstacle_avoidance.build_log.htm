@@ -1,0 +1,179 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Dheeraj Skandakumar Nair, San Jose State University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\ti\TivaWare_C_Series-2.2.0.295\examples\boards\ek-tm4c123gxl\my_projects\obstacle_avoidance\obstacle_avoidance.uvprojx
+Project File Date:  11/27/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+obstacle_avoidance.c(28): warning: no previous extern declaration for non-static variable '_16Hz_1clock' [-Wmissing-variable-declarations]
+const double _16Hz_1clock = 62.5e-9;
+             ^
+obstacle_avoidance.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const double _16Hz_1clock = 62.5e-9;
+      ^
+obstacle_avoidance.c(29): warning: no previous extern declaration for non-static variable 'MULTIPLIER' [-Wmissing-variable-declarations]
+const uint32_t MULTIPLIER = 5882;
+               ^
+obstacle_avoidance.c(29): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+const uint32_t MULTIPLIER = 5882;
+      ^
+obstacle_avoidance.c(52): warning: no previous extern declaration for non-static variable 'goesforward' [-Wmissing-variable-declarations]
+bool goesforward =false;
+     ^
+obstacle_avoidance.c(52): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+bool goesforward =false;
+^
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h(15): note: expanded from macro 'bool'
+    #define bool _Bool
+                 ^
+obstacle_avoidance.c(53): warning: no previous extern declaration for non-static variable 'distance' [-Wmissing-variable-declarations]
+uint32_t distance = 100;
+         ^
+obstacle_avoidance.c(53): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t distance = 100;
+^
+obstacle_avoidance.c(111): warning: expression result unused [-Wunused-value]
+                                movestop;
+                                ^~~~~~~~
+obstacle_avoidance.c(126): warning: 'return' will never be executed [-Wunreachable-code-return]
+        return 0;
+               ^
+obstacle_avoidance.c(136): warning: declaration shadows a variable in the global scope [-Wshadow]
+        uint32_t distance = read_distance();
+                 ^
+obstacle_avoidance.c(53): note: previous declaration is here
+uint32_t distance = 100;
+         ^
+obstacle_avoidance.c(146): warning: declaration shadows a variable in the global scope [-Wshadow]
+        uint32_t distance = read_distance();
+                 ^
+obstacle_avoidance.c(53): note: previous declaration is here
+uint32_t distance = 100;
+         ^
+obstacle_avoidance.c(187): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=(~0x02);
+                          ~~ ^~~~~
+obstacle_avoidance.c(193): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=(~0x01);
+                          ~~ ^~~~~
+obstacle_avoidance.c(201): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=~(0x03);
+                          ~~^~~~~~~
+obstacle_avoidance.c(209): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=~(0x08);
+                          ~~^~~~~~~
+obstacle_avoidance.c(215): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=~(0x04);
+                          ~~^~~~~~~
+obstacle_avoidance.c(223): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_DATA_R &=~(0x0C);
+                          ~~^~~~~~~
+obstacle_avoidance.c(262): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTA_DIR_R |=pin;
+                         ~~^~~
+obstacle_avoidance.c(263): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTA_DEN_R |=pin;
+                         ~~^~~
+obstacle_avoidance.c(277): warning: comparison of integers of different signs: 'int' and 'uint32_t' (aka 'unsigned int') [-Wsign-compare]
+        for(i=0;i<time;i++){
+                ~^~~~~
+obstacle_avoidance.c(288): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R |=pin;
+                                   ~~^~~
+obstacle_avoidance.c(290): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R &=~(pin);
+                                   ~~^~~~~~
+obstacle_avoidance.c(301): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R |=pin;
+                                   ~~^~~
+obstacle_avoidance.c(303): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R &=~(pin);
+                                   ~~^~~~~~
+obstacle_avoidance.c(313): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R |=pin;
+                                   ~~^~~
+obstacle_avoidance.c(315): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                 GPIO_PORTA_DATA_R &=~(pin);
+                                   ~~^~~~~~
+obstacle_avoidance.c(331): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTB_PCTL_R &=~0x0F000000;
+                          ~~^~~~~~~~~~~
+obstacle_avoidance.c(334): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        TIMER0_CTL_R &=~1;
+                     ~~^~
+obstacle_avoidance.c(358): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while((TIMER0_RIS_R & 4)==0){};
+                                      ^
+obstacle_avoidance.c(363): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                while((TIMER0_RIS_R & 4)==0){};
+                                              ^
+obstacle_avoidance.c(366): warning: implicit conversion turns floating-point number into integer: 'double' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+                ddistance=_16Hz_1clock * (double)MULTIPLIER * ddistance;
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+obstacle_avoidance.c(26): warning: no previous extern declaration for non-static variable 'highEdge' [-Wmissing-variable-declarations]
+uint32_t highEdge, lowEdge;
+         ^
+obstacle_avoidance.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t highEdge, lowEdge;
+^
+obstacle_avoidance.c(26): warning: no previous extern declaration for non-static variable 'lowEdge' [-Wmissing-variable-declarations]
+uint32_t highEdge, lowEdge;
+                   ^
+obstacle_avoidance.c(26): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t highEdge, lowEdge;
+^
+obstacle_avoidance.c(27): warning: no previous extern declaration for non-static variable 'ddistance' [-Wmissing-variable-declarations]
+uint32_t ddistance;
+         ^
+obstacle_avoidance.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t ddistance;
+^
+obstacle_avoidance.c(36): warning: no previous extern declaration for non-static variable 'distance_in_cm' [-Wmissing-variable-declarations]
+uint32_t distance_in_cm;
+         ^
+obstacle_avoidance.c(36): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t distance_in_cm;
+^
+32 warnings generated.
+compiling obstacle_avoidance.c...
+linking...
+Program Size: Code=2876 RO-data=32 RW-data=4 ZI-data=368  
+".\Objects\obstacle_avoidance.axf" - 0 Error(s), 32 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil.TM4C_DFP.1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\dheer\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
