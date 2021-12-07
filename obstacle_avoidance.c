@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdint.h>
-//#include "../inc/hw_types.h"
-//#include "../inc/hw_memmap.h"
-//#include "../inc/hw_gpio.h"
+#include "../inc/hw_types.h"
+#include "../inc/hw_memmap.h"
+#include "../inc/hw_gpio.h"
 #include "../driverlib/sysctl.h"
-//#include "../driverlib/pin_map.h"
+#include "../driverlib/pin_map.h"
 #include "../inc/tm4c123gh6pm.h"
-//#include "../driverlib/rom_map.h"
-//#include "../driverlib/gpio.h"
+#include "../driverlib/rom_map.h"
+#include "../driverlib/gpio.h"
 
 //function prototypes for motor
 void movestop(void);
@@ -25,14 +25,13 @@ void turnleft(void);
 
 uint32_t highEdge, lowEdge;
 uint32_t ddistance;
-const double _16Hz_1clock = 62.5e-9;
+const double _16MHz_1clock = 62.5e-9;
 const uint32_t MULTIPLIER = 5882;
 void Delay_MicroSecond(uint32_t time);
 void Timer0_init(void);
 void portA_init(void);
 void portB_init(void);
 uint32_t measureD(void);
-
 uint32_t distance_in_cm;
 
 //function prototypes for servo
@@ -68,7 +67,7 @@ int main()
 	//initialization for ultrasonic sensor
 	portA_init();
 	Timer0_init();
-	
+
 	//initialization for servo
 	servo_init(PA3);
 	
@@ -108,7 +107,7 @@ int main()
 			if(distance >= distantleft)
 			{
 				turnright();
-				movestop;
+				movestop();
 			}
 			else{
 				turnleft();
@@ -124,7 +123,6 @@ int main()
 	}
 	
 	return 0;
-
 }
 
 //misc functions
@@ -198,7 +196,7 @@ void left_motor_backward(void)
 void left_motor_stop(void)
 {
 	//clear PB0, PB1
-	GPIO_PORTB_DATA_R &=~(0x03);
+	GPIO_PORTB_DATA_R &=(~0x03);
 }
 
 void right_motor_forward(void)
@@ -206,13 +204,13 @@ void right_motor_forward(void)
 	//SET PB2
 	GPIO_PORTB_DATA_R |=0x04;
 	//CLEAR PB3
-	GPIO_PORTB_DATA_R &=~(0x08);
+	GPIO_PORTB_DATA_R &=(~0x08);
 }
 
 void right_motor_backward(void)
 {
 	//CLEAR PB2
-	GPIO_PORTB_DATA_R &=~(0x04);
+	GPIO_PORTB_DATA_R &=(~0x04);
 	//SET PB3
 	GPIO_PORTB_DATA_R |=0x08;
 }
@@ -220,7 +218,7 @@ void right_motor_backward(void)
 void right_motor_stop(void)
 {
 	//clear PB2, PB3
-	GPIO_PORTB_DATA_R &=~(0x0C);
+	GPIO_PORTB_DATA_R &=(~0x0C);
 }
 
 void movestop(void)
@@ -342,8 +340,8 @@ void portA_init(void)
 { 
 
 	SYSCTL_RCGC2_R |=(1U<<0);
-	GPIO_PORTB_DIR_R &=~TRIG;
-	GPIO_PORTB_DIR_R |=TRIG;
+	GPIO_PORTA_DIR_R &=~TRIG;
+	GPIO_PORTA_DEN_R |=TRIG;
 }
 
 uint32_t measureD(void)
@@ -355,15 +353,15 @@ uint32_t measureD(void)
 	GPIO_PORTA_DATA_R &= ~TRIG;
 	
 	TIMER0_ICR_R = 4;
-	while((TIMER0_RIS_R & 4)==0){};
+	while((TIMER0_RIS_R & 4)==0){}
 		if(GPIO_PORTB_DATA_R & (1<<6)){
 			highEdge = TIMER0_TAR_R;
 			TIMER0_ICR_R=4;
 			
-		while((TIMER0_RIS_R & 4)==0){};
+		while((TIMER0_RIS_R & 4)==0){}
 			lowEdge = TIMER0_TAR_R;
 		ddistance = lowEdge-highEdge;
-		ddistance=_16Hz_1clock * (double)MULTIPLIER * ddistance;
+		ddistance=_16MHz_1clock * (double)MULTIPLIER * ddistance;
 		}
 		return ddistance;
 		

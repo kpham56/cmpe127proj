@@ -79,6 +79,8 @@ __heap_limit
 ;
 ;******************************************************************************
         EXPORT  __Vectors
+		EXTERN Delay_MicroSecond
+		EXTERN Measure_distance
 __Vectors
         DCD     StackMem + Stack            ; Top of Stack
         DCD     Reset_Handler               ; Reset Handler
@@ -115,9 +117,9 @@ __Vectors
         DCD     IntDefaultHandler           ; ADC Sequence 2
         DCD     IntDefaultHandler           ; ADC Sequence 3
         DCD     IntDefaultHandler           ; Watchdog timer
-        DCD     IntDefaultHandler           ; Timer 0 subtimer A
+        DCD     Measure_distance			; Timer 0 subtimer A
         DCD     IntDefaultHandler           ; Timer 0 subtimer B
-        DCD     IntDefaultHandler           ; Timer 1 subtimer A
+        DCD     Delay_MicroSecond           ; Timer 1 subtimer A
         DCD     IntDefaultHandler           ; Timer 1 subtimer B
         DCD     IntDefaultHandler           ; Timer 2 subtimer A
         DCD     IntDefaultHandler           ; Timer 2 subtimer B

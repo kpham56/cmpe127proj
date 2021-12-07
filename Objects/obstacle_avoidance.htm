@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\obstacle_avoidance.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\obstacle_avoidance.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Sat Nov 27 14:47:19 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Nov 30 16:20:32 2021
 <BR><P>
-<H3>Maximum Stack Usage =         72 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         64 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
 <P>
@@ -13,7 +13,7 @@ __rt_entry_main &rArr; main &rArr; lookright &rArr; read_distance &rArr; measure
 Functions with no stack information
 </H3><UL>
  <LI><a href="#[0]">Reset_Handler</a>
- <LI><a href="#[17]">__user_initial_stackheap</a>
+ <LI><a href="#[18]">__user_initial_stackheap</a>
  <LI><a href="#[1]">NmiSR</a>
  <LI><a href="#[2]">FaultISR</a>
  <LI><a href="#[3]">IntDefaultHandler</a>
@@ -30,8 +30,9 @@ Mutually Recursive functions
 <H3>
 Function Pointers
 </H3><UL>
+ <LI><a href="#[4]">Delay_MicroSecond</a> from obstacle_avoidance.o(.text.Delay_MicroSecond) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[2]">FaultISR</a> from startup_rvmdk.o(RESET) referenced from startup_rvmdk.o(RESET)
- <LI><a href="#[3]">IntDefaultHandler</a> from startup_rvmdk.o(RESET) referenced 114 times from startup_rvmdk.o(RESET)
+ <LI><a href="#[3]">IntDefaultHandler</a> from startup_rvmdk.o(RESET) referenced 113 times from startup_rvmdk.o(RESET)
  <LI><a href="#[1]">NmiSR</a> from startup_rvmdk.o(RESET) referenced from startup_rvmdk.o(RESET)
  <LI><a href="#[0]">Reset_Handler</a> from startup_rvmdk.o(RESET) referenced from startup_rvmdk.o(RESET)
 </UL>
@@ -40,43 +41,43 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_rvmdk.o(RESET))
-<BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<BR><BR>[Calls]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_rvmdk.o(RESET)
 </UL>
-<P><STRONG><a name="[4]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
-<LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<P><STRONG><a name="[5]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
+<BR><BR>[Calls]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 <BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
 </UL>
 
-<P><STRONG><a name="[5]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
-<BR><BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[6]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
+<BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[7]"></a>__scatterload_rt2</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<P><STRONG><a name="[8]"></a>__scatterload_rt2</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[37]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
 <P><STRONG><a name="[38]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[8]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<P><STRONG><a name="[9]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
 <P><STRONG><a name="[39]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
-<P><STRONG><a name="[e]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
+<P><STRONG><a name="[f]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
-<P><STRONG><a name="[9]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000001))
-<BR><BR>[Calls]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_init
+<P><STRONG><a name="[a]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000001))
+<BR><BR>[Calls]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_init
 </UL>
 
 <P><STRONG><a name="[3a]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
@@ -119,8 +120,8 @@ Global Symbols
 
 <P><STRONG><a name="[4d]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[13]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+<P><STRONG><a name="[14]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
 <P><STRONG><a name="[4e]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
@@ -137,52 +138,52 @@ Global Symbols
 
 <P><STRONG><a name="[54]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
-<P><STRONG><a name="[6]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
-<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[7]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[55]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
-<P><STRONG><a name="[b]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
+<P><STRONG><a name="[c]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_sh &rArr; __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<BR>[Calls]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[d]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
-<BR><BR>[Calls]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
+<P><STRONG><a name="[e]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
 <P><STRONG><a name="[56]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
-<P><STRONG><a name="[f]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<P><STRONG><a name="[10]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
-<LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Calls]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[57]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[18]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<P><STRONG><a name="[19]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[12]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
-<BR><BR>[Calls]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
+<P><STRONG><a name="[13]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
+<BR><BR>[Calls]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
 <P><STRONG><a name="[58]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
-<P><STRONG><a name="[14]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+<P><STRONG><a name="[15]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
-<P><STRONG><a name="[17]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_rvmdk.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[18]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_rvmdk.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
 <P><STRONG><a name="[59]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -191,35 +192,35 @@ Global Symbols
 
 <P><STRONG><a name="[5b]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[c]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
+<P><STRONG><a name="[d]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
-<LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<BR>[Calls]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
+<BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[11]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
+<P><STRONG><a name="[12]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = exit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[18]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<BR>[Calls]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
 <P><STRONG><a name="[5c]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[16]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[17]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
 <P><STRONG><a name="[5d]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[15]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
+<P><STRONG><a name="[16]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[15]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
 <P><STRONG><a name="[5e]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
@@ -228,19 +229,20 @@ Global Symbols
 
 <P><STRONG><a name="[60]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b]"></a>Delay_MicroSecond</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.Delay_MicroSecond))
+<P><STRONG><a name="[4]"></a>Delay_MicroSecond</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.Delay_MicroSecond))
 <BR><BR>[Called By]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_90_degree
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_45_degree
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_135_degree
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_135_degree
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_distance
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;measureD
-<LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookright
-<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
 </UL>
-
+<BR>[Address Reference Count : 1]<UL><LI> startup_rvmdk.o(RESET)
+</UL>
 <P><STRONG><a name="[22]"></a>Timer0_init</STRONG> (Thumb, 132 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.Timer0_init))
-<BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[2d]"></a>left_motor_backward</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.left_motor_backward))
@@ -257,30 +259,30 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;movestop
 </UL>
 
-<P><STRONG><a name="[19]"></a>lookleft</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, obstacle_avoidance.o(.text.lookleft))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = lookleft &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
+<P><STRONG><a name="[1a]"></a>lookleft</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.lookleft))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = lookleft &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_90_degree
-<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_135_degree
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_135_degree
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_distance
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1e]"></a>lookright</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, obstacle_avoidance.o(.text.lookright))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
+<P><STRONG><a name="[1e]"></a>lookright</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.lookright))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_90_degree
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;servo_45_degree
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_distance
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[10]"></a>main</STRONG> (Thumb, 222 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = main &rArr; lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
+<P><STRONG><a name="[11]"></a>main</STRONG> (Thumb, 218 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = main &rArr; lookright &rArr; read_distance &rArr; measureD &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;turnright
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;turnleft
@@ -293,11 +295,11 @@ Global Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;moveforward
 <LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;movebackward
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookright
-<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
 <LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer0_init
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
 <P><STRONG><a name="[29]"></a>measureD</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, obstacle_avoidance.o(.text.measureD))
@@ -306,7 +308,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;read_distance
 </UL>
@@ -317,7 +319,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;right_motor_backward
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;left_motor_backward
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[24]"></a>moveforward</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.moveforward))
@@ -326,7 +328,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;right_motor_forward
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;left_motor_forward
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[25]"></a>movestop</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.movestop))
@@ -335,26 +337,26 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;right_motor_stop
 <LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;left_motor_stop
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[21]"></a>portA_init</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.portA_init))
-<BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[21]"></a>portA_init</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.portA_init))
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[20]"></a>portB_init</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.portB_init))
-<BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[1c]"></a>read_distance</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.read_distance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = read_distance &rArr; measureD &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;measureD
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookright
-<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
 </UL>
 
 <P><STRONG><a name="[2e]"></a>right_motor_backward</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.right_motor_backward))
@@ -371,34 +373,34 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;movestop
 </UL>
 
-<P><STRONG><a name="[1a]"></a>servo_135_degree</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, obstacle_avoidance.o(.text.servo_135_degree))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = servo_135_degree
+<P><STRONG><a name="[1b]"></a>servo_135_degree</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, obstacle_avoidance.o(.text.servo_135_degree))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = servo_135_degree
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
+<BR>[Called By]<UL><LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
 </UL>
 
 <P><STRONG><a name="[1f]"></a>servo_45_degree</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, obstacle_avoidance.o(.text.servo_45_degree))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = servo_45_degree
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookright
 </UL>
 
-<P><STRONG><a name="[1d]"></a>servo_90_degree</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, obstacle_avoidance.o(.text.servo_90_degree))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = servo_90_degree
+<P><STRONG><a name="[1d]"></a>servo_90_degree</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, obstacle_avoidance.o(.text.servo_90_degree))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = servo_90_degree
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
+<BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_MicroSecond
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookright
-<LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
+<LI><a href="#[1a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lookleft
 </UL>
 
-<P><STRONG><a name="[23]"></a>servo_init</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.servo_init))
-<BR><BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[23]"></a>servo_init</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, obstacle_avoidance.o(.text.servo_init))
+<BR><BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[27]"></a>turnleft</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.turnleft))
@@ -407,7 +409,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;right_motor_forward
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;left_motor_backward
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[28]"></a>turnright</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, obstacle_avoidance.o(.text.turnright))
@@ -416,7 +418,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;right_motor_backward
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;left_motor_forward
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[2c]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
@@ -455,8 +457,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
 </UL>
 
-<P><STRONG><a name="[a]"></a>_fp_init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))
-<BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
+<P><STRONG><a name="[b]"></a>_fp_init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))
+<BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
 </UL>
 
 <P><STRONG><a name="[62]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
